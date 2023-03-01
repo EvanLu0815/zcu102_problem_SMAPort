@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Feb 13 10:56:48 2023
+# Process ID: 24000
+# Current directory: E:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.runs/synth_1
+# Command line: vivado.exe -log MDIO_demo_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MDIO_demo_tb.tcl
+# Log file: E:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.runs/synth_1/MDIO_demo_tb.vds
+# Journal file: E:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.runs/synth_1\vivado.jou
+# Running On: LAPTOP-7UM5MEUP, OS: Windows, CPU Frequency: 2895 MHz, CPU Physical cores: 16, Host memory: 16556 MB
+#-----------------------------------------------------------
+source MDIO_demo_tb.tcl -notrace

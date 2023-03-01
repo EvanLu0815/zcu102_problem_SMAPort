@@ -1,0 +1,12 @@
+verilog xil_defaultlib  \
+"../../../../gig_ethernet_pcs_pma_0_ex.gen/sources_1/ip/gtwizard_ultrascale_0/sim/gtwizard_ultrascale_v1_7_gthe4_channel.v" \
+"../../../../gig_ethernet_pcs_pma_0_ex.gen/sources_1/ip/gtwizard_ultrascale_0/sim/gtwizard_ultrascale_0_gthe4_channel_wrapper.v" \
+"../../../../gig_ethernet_pcs_pma_0_ex.gen/sources_1/ip/gtwizard_ultrascale_0/sim/gtwizard_ultrascale_v1_7_gthe4_common.v" \
+"../../../../gig_ethernet_pcs_pma_0_ex.gen/sources_1/ip/gtwizard_ultrascale_0/sim/gtwizard_ultrascale_0_gthe4_common_wrapper.v" \
+"../../../../gig_ethernet_pcs_pma_0_ex.gen/sources_1/ip/gtwizard_ultrascale_0/sim/gtwizard_ultrascale_0_gtwizard_gthe4.v" \
+"../../../../gig_ethernet_pcs_pma_0_ex.gen/sources_1/ip/gtwizard_ultrascale_0/sim/gtwizard_ultrascale_0_gtwizard_top.v" \
+"../../../../gig_ethernet_pcs_pma_0_ex.gen/sources_1/ip/gtwizard_ultrascale_0/sim/gtwizard_ultrascale_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

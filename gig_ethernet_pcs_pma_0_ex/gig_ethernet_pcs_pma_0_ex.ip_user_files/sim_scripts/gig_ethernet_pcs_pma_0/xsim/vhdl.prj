@@ -1,0 +1,7 @@
+vhdl xpm  \
+"C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_VCOMP.vhd" \
+
+vhdl gig_ethernet_pcs_pma_v16_2_8  \
+"../../../ipstatic/hdl/gig_ethernet_pcs_pma_v16_2_rfs.vhd" \
+
+nosort

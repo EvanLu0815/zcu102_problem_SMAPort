@@ -1,0 +1,100 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Feb  6 14:40:29 2023
+# Process ID: 10864
+# Current directory: e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex
+# Command line: vivado.exe -notrace -source e:/Research/Ethernet1G/EthernetIP_zuc102_v2/EthernetIP_zuc102_v2.gen/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0_ex.tcl
+# Log file: e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/vivado.log
+# Journal file: e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex\vivado.jou
+# Running On: LAPTOP-7UM5MEUP, OS: Windows, CPU Frequency: 2895 MHz, CPU Physical cores: 16, Host memory: 16556 MB
+#-----------------------------------------------------------
+start_gui
+source e:/Research/Ethernet1G/EthernetIP_zuc102_v2/EthernetIP_zuc102_v2.gen/sources_1/ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0_ex.tcl -notrace
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+file mkdir e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.srcs/sources_1/new
+close [ open e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.srcs/sources_1/new/MDIO_demo_tb.v w ]
+add_files e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.srcs/sources_1/new/MDIO_demo_tb.v
+update_compile_order -fileset sources_1
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0
+endgroup
+set_property -dict [list CONFIG.PRIM_IN_FREQ.VALUE_SRC USER] [get_bd_cells clk_wiz_0]
+set_property -dict [list CONFIG.PRIM_SOURCE {Differential_clock_capable_pin} CONFIG.PRIM_IN_FREQ {300.000} CONFIG.CLKOUT2_USED {true} CONFIG.CLKOUT3_USED {true} CONFIG.CLKOUT4_USED {true} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {125} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {125} CONFIG.CLKOUT2_REQUESTED_PHASE {180} CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {125} CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {50} CONFIG.CLKIN1_JITTER_PS {33.330000000000005} CONFIG.MMCM_DIVCLK_DIVIDE {3} CONFIG.MMCM_CLKFBOUT_MULT_F {12.500} CONFIG.MMCM_CLKIN1_PERIOD {3.333} CONFIG.MMCM_CLKIN2_PERIOD {10.0} CONFIG.MMCM_CLKOUT0_DIVIDE_F {10.000} CONFIG.MMCM_CLKOUT1_DIVIDE {10} CONFIG.MMCM_CLKOUT1_PHASE {180.000} CONFIG.MMCM_CLKOUT2_DIVIDE {10} CONFIG.MMCM_CLKOUT3_DIVIDE {25} CONFIG.NUM_OUT_CLKS {4} CONFIG.CLKOUT1_JITTER {106.400} CONFIG.CLKOUT1_PHASE_ERROR {84.520} CONFIG.CLKOUT2_JITTER {106.400} CONFIG.CLKOUT2_PHASE_ERROR {84.520} CONFIG.CLKOUT3_JITTER {106.400} CONFIG.CLKOUT3_PHASE_ERROR {84.520} CONFIG.CLKOUT4_JITTER {126.438} CONFIG.CLKOUT4_PHASE_ERROR {84.520}] [get_bd_cells clk_wiz_0]
+set_property -dict [list CONFIG.CLK_OUT1_PORT {clk_out_125M_p} CONFIG.CLK_OUT2_PORT {clk_out_125M_n} CONFIG.CLK_OUT3_PORT {clk_out_125M} CONFIG.CLK_OUT4_PORT {clk_out_50M}] [get_bd_cells clk_wiz_0]
+set_property USER_COMMENTS.comment_0 {Enter Comments here}  [get_bd_pins clk_wiz_0/clk_in1_n]
+undo
+startgroup
+create_bd_port -dir I -type clk -freq_hz 300000000 clk_in_300M_n
+connect_bd_net [get_bd_pins /clk_wiz_0/clk_in1_n] [get_bd_ports clk_in_300M_n]
+endgroup
+startgroup
+create_bd_port -dir I -type clk -freq_hz 300000000 clk_in_300M_p
+connect_bd_net [get_bd_pins /clk_wiz_0/clk_in1_p] [get_bd_ports clk_in_300M_p]
+endgroup
+startgroup
+create_bd_port -dir I -type rst reset
+set_property CONFIG.POLARITY [get_property CONFIG.POLARITY [get_bd_pins clk_wiz_0/reset]] [get_bd_ports reset]
+connect_bd_net [get_bd_pins /clk_wiz_0/reset] [get_bd_ports reset]
+endgroup
+startgroup
+create_bd_port -dir O locked
+connect_bd_net [get_bd_pins /clk_wiz_0/locked] [get_bd_ports locked]
+endgroup
+startgroup
+create_bd_port -dir O -type clk clk_out_125M_p
+connect_bd_net [get_bd_pins /clk_wiz_0/clk_out_125M_p] [get_bd_ports clk_out_125M_p]
+endgroup
+startgroup
+create_bd_port -dir O -type clk clk_out_125M_n
+connect_bd_net [get_bd_pins /clk_wiz_0/clk_out_125M_n] [get_bd_ports clk_out_125M_n]
+endgroup
+startgroup
+create_bd_port -dir O -type clk clk_out_125M
+connect_bd_net [get_bd_pins /clk_wiz_0/clk_out_125M] [get_bd_ports clk_out_125M]
+endgroup
+startgroup
+create_bd_port -dir O -type clk clk_out_50M
+connect_bd_net [get_bd_pins /clk_wiz_0/clk_out_50M] [get_bd_ports clk_out_50M]
+endgroup
+regenerate_bd_layout
+save_bd_design
+make_wrapper -files [get_files e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top MDIO_demo_tb [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+file mkdir e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.srcs/constrs_1
+file mkdir e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.srcs/constrs_1/new
+close [ open e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.srcs/constrs_1/new/top.xdc w ]
+add_files -fileset constrs_1 e:/Research/Ethernet1G/zcu102_v2_egdesign/gig_ethernet_pcs_pma_0_ex/gig_ethernet_pcs_pma_0_ex.srcs/constrs_1/new/top.xdc
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
